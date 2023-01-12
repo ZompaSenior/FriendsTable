@@ -14,12 +14,25 @@ from common import models as cm
 class Restaurant(cm.Base, cm.EditInfo, cm.TrashBin):
     pass
 
-class MenuEntry(cm.Base, cm.EditInfo, cm.TrashBin):
-    models.ForeignKey(
+
+class MenuEntry(cm.Base, cm.EditInfo, cm.TrashBin, cm.Ordered):
+    restaurant = models.ForeignKey(
         Restaurant,
         on_delete = models.CASCADE,
         related_name = "menu_entries",
         verbose_name = _("Restaurant"),
         help_text = _("The Restaurant owner of this Menu Entry"))
+    
+    image = models.ImageField(
+        max_length = 255,
+        blank = True,
+        verbose_name = _("Dish Image"),
+        help_text = _("The picture of the current dish"))
+    
+    max = models.SmallIntegerField(
+        default = 0,
+        verbose_name = _("Max"),
+        help_text = _("Max quantity of portions it is possible to order"))
+    
     
     

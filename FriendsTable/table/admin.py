@@ -1,3 +1,11 @@
+"""Tables Admin configuration."""
+
+# Standard Import
+
+# Site-package Import
 from django.contrib import admin
 
-# Register your models here.
+# Project Import
+from table import models as tm
+
+admin.site.register(tm.Table)

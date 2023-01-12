@@ -1,3 +1,11 @@
+"""Orders Admin configuration."""
+
+# Standard Import
+
+# Site-package Import
 from django.contrib import admin
 
-# Register your models here.
+# Project Import
+from order import models as om
+
+admin.site.register(om.Order)

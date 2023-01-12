@@ -81,6 +81,7 @@ class EditInfo(models.Model):
         verbose_name = _("Last edit User"),
         help_text = _("The User edited the object last time"))
     
+    """
     def save(self, *args, **kwargs):
         print()
         print(dir(self))
@@ -90,6 +91,7 @@ class EditInfo(models.Model):
         self.edit_user = self.user.username
         
         super(EditInfo, self).save(*args,**kwargs)    
+    """
     
     class Meta:
         abstract = True

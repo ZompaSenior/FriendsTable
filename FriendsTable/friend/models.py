@@ -17,4 +17,10 @@ class Friends(cm.Base, cm.EditInfo, cm.TrashBin):
         on_delete=models.CASCADE,
         verbose_name = _("User"),
         help_text = _("User of this Friend"))
+    
+    image = models.ImageField(
+        max_length = 255,
+        blank = True,
+        verbose_name = _("Profile Image"),
+        help_text = _("The picture that is shown for the Friend"))
         
