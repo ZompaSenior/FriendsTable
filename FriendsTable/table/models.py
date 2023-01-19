@@ -38,5 +38,8 @@ class Table(cm.Base, cm.EditInfo, cm.TrashBin):
         help_text = _("The Restaurant at witch the Table is reserved"))
     
     
+    class Meta:
+        ordering = ["-reservation_date"]
+    
 
     

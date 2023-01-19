@@ -12,7 +12,11 @@ from common import models as cm
 
 
 class Restaurant(cm.Base, cm.EditInfo, cm.TrashBin):
-    pass
+    image = models.ImageField(
+        max_length = 255,
+        blank = True,
+        verbose_name = _("Restaurant Logo"),
+        help_text = _("The logo picture of the restaurant"))
 
 
 class MenuEntry(cm.Base, cm.EditInfo, cm.TrashBin, cm.Ordered):

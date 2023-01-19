@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Friends Table - Restaurants{% endblock %}
+
+{% block content %}
+
+	{% for main_object in main_object_list %}
+		<a href="{% url 'tables' main_object.id %}">
+			<img src="{{ main_object.image.url }}" alt="{{main_object.name}}"></img>
+		</a>
+	{% empty %}
+		<p>No restaurants yet</p>
+	{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Friends Table - {{master_object.name}}'s Tables{% endblock %}
+
+{% block content %}
+	<img src="{{master_object.image.url}}" width="96" height="96" ></img>
+
+	<div class="d-grid gap-2">
+	{% for main_object in main_object_list %}
+			<button type="button" class="btn btn-primary">
+					{{main_object.name}}<br />
+					{{main_object.description}}
+					{{main_object.reservation_date}}
+			</button>
+	{% empty %}
+		<p>No tables yet</p>
+	{% endfor %}
+	</div>
+
+{% endblock %}
